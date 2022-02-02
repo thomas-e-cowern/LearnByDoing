@@ -9,12 +9,18 @@ import SwiftUI
 
 // MARK: Card
 struct CardView: View {
+    
+    // MARK:  Properties
+    
+    var gradient: [Color] = [Color("Color01"), Color("Color02")]
+    
+    
     var body: some View {
         ZStack {
             Text("CARD")
         }
         .frame(width: 335, height: 545)
-        .background(Color.pink)
+        .background(LinearGradient(gradient:  Gradient(colors: gradient), startPoint: .top, endPoint: .bottom))
         .cornerRadius(16)
         .shadow(radius: 8)
     }
@@ -22,8 +28,7 @@ struct CardView: View {
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            CardView()
-        }
+        CardView()
+            .previewLayout(.sizeThatFits)
     }
 }
