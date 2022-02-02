@@ -13,11 +13,17 @@ struct CardView: View {
         ZStack {
             Text("CARD")
         }
+        .frame(width: 335, height: 545)
+        .background(Color.pink)
+        .cornerRadius(16)
+        .shadow(radius: 8)
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView()
+        Group {
+            CardView()
+        }
     }
 }
