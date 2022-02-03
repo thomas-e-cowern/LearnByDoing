@@ -14,7 +14,9 @@ struct ContentView: View {
         
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: 20) {
-                CardView()
+                ForEach(0 ..< 5) { item in
+                    CardView()
+                }
             }
             .padding(20)
         }
@@ -24,7 +26,9 @@ struct ContentView: View {
 // MARK:  Preview
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .previewDevice("iPhone 13 Pro")
+        Group {
+            ContentView()
+                .previewDevice("iPhone 13 Pro")
+        }
     }
 }
