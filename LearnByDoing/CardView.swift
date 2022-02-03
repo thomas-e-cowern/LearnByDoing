@@ -34,7 +34,7 @@ struct CardView: View {
             .offset(y: -218)
             
             Button(action: {
-                print("Button was tapped")
+                print(card.message)
             }) {
                 HStack {
                     Text(card.callToAction.uppercased())
