@@ -12,11 +12,13 @@ struct CardView: View {
     
     // MARK:  Properties
     var card: Card
+    @State private var fadeIn: Bool = false
     
     // MARK: Card
     var body: some View {
         ZStack {
             Image(card.imageName)
+                .opacity(fadeIn ? 1.0 : 0.0)
             
             VStack {
                 Text(card.title)
@@ -59,6 +61,11 @@ struct CardView: View {
         .background(LinearGradient(gradient:  Gradient(colors: card.gradientColors), startPoint: .top, endPoint: .bottom))
         .cornerRadius(16)
         .shadow(radius: 8)
+        .onAppear() {
+            withAnimation(.linear(duration: 1.2)) {
+                self.fadeIn.toggle()
+            }
+        }
     }
 }
 
