@@ -64,6 +64,7 @@
 		4154AE1D27AACFFA00A48F06 /* LearnByDoing */ = {
 			isa = PBXGroup;
 			children = (
+				41835AD027AC3174008E4430 /* sound-chime.mp3 */,
 				41835AD227AC318A008E4430 /* Sounds */,
 				4154AE2E27AB0E9300A48F06 /* Info.plist */,
 				4154AE1E27AACFFA00A48F06 /* LearnByDoingApp.swift */,
@@ -90,7 +91,6 @@
 		41835AD227AC318A008E4430 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				41835AD027AC3174008E4430 /* sound-chime.mp3 */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
