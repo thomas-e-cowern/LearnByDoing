@@ -13,6 +13,7 @@ struct CardView: View {
     // MARK:  Properties
     var card: Card
     @State private var fadeIn: Bool = false
+    @State private var fadeDownward: Bool = false
     
     // MARK: Card
     var body: some View {
@@ -26,6 +27,7 @@ struct CardView: View {
                     .font(.largeTitle)
                     .fontWeight(.heavy)
                     .multilineTextAlignment(.center)
+                    .opacity(fadeDownward ? 1.0 : 0.0)
                 Text(card.headline)
                     .font(.footnote)
                     .fontWeight(.regular)
@@ -64,6 +66,9 @@ struct CardView: View {
         .onAppear() {
             withAnimation(.linear(duration: 1.2)) {
                 self.fadeIn.toggle()
+            }
+            withAnimation(.linear(duration: 0.8)) {
+                self.fadeDownward.toggle()
             }
         }
     }
