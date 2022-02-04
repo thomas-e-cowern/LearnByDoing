@@ -14,6 +14,7 @@ struct CardView: View {
     var card: Card
     @State private var fadeIn: Bool = false
     @State private var fadeDownward: Bool = false
+    @State private var slideIn: Bool = false
     
     // MARK: Card
     var body: some View {
@@ -57,7 +58,8 @@ struct CardView: View {
                 .clipShape(Capsule())
                 .shadow(color: Color("ColorShadow"), radius: 6, x: 0, y: 3)
             }
-            .offset(y: 210)
+            .offset(y: slideIn ? 210 : 300)
+            
         }
         .frame(width: 335, height: 545)
         .background(LinearGradient(gradient:  Gradient(colors: card.gradientColors), startPoint: .top, endPoint: .bottom))
@@ -69,6 +71,9 @@ struct CardView: View {
             }
             withAnimation(.linear(duration: 0.8)) {
                 self.fadeDownward.toggle()
+            }
+            withAnimation(.linear(duration: 1.0)) {
+                self.slideIn.toggle()
             }
         }
     }
